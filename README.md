@@ -1,1 +1,1 @@
-Bootstrap admin integretion project
+Bootstrap admin integration project
