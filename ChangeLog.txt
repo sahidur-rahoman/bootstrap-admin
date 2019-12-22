@@ -1,2 +1,5 @@
 [22-Dec-2019]
+* [SH] Configure project with Spring WebMVC
+
+[22-Dec-2019]
 * [SH] Bootstrap template integrated.
