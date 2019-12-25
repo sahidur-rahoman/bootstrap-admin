@@ -11,7 +11,7 @@
 
 	<properties>
 		<spring.version>5.2.2.RELEASE</spring.version>
-		<jackson.version>2.9.4</jackson.version>
+		<jackson.version>2.9.10.1</jackson.version>
 		<jdbc.version>8.0.17</jdbc.version>
         <logback.version>1.2.3</logback.version>
 	</properties>
