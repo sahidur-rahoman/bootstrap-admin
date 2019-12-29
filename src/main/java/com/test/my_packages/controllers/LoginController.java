@@ -1,4 +1,4 @@
-package com.test.controllers;
+package com.test.my_packages.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.test.models.User;
-import com.test.services.UserService;
+import com.test.my_packages.models.User;
+import com.test.my_packages.services.UserService;
 
 @Controller
 @RequestMapping("/login")

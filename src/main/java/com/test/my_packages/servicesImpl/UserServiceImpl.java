@@ -1,13 +1,13 @@
-package com.test.servicesImpl;
+package com.test.my_packages.servicesImpl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.test.models.User;
-import com.test.repositories.UsersReposotory;
-import com.test.services.UserService;
+import com.test.my_packages.models.User;
+import com.test.my_packages.repositories.UsersReposotory;
+import com.test.my_packages.services.UserService;
 
 @Component
 public class UserServiceImpl implements UserService {

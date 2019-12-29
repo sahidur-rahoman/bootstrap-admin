@@ -1,4 +1,4 @@
-package com.test.controllers;
+package com.test.my_packages.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,4 +13,5 @@ public class DashBoardController {
 	public ModelAndView home() {
 		return new ModelAndView("dashboard");
 	}
+
 }
