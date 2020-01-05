@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.test.my_packages.models.Product;
+import com.test.models.Product;
 import com.test.my_packages.services.ProductService;
 
 @Controller

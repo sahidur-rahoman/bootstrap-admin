@@ -3,9 +3,9 @@ package com.test.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.test.models.Qualifications;
+import com.test.models.Qualification;
 
 @Repository
-public interface QualificationsRepository extends JpaRepository<Qualifications, Integer> {
+public interface QualificationsRepository extends JpaRepository<Qualification, Integer> {
 
 }

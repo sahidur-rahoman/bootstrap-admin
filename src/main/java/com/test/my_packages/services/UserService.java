@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.test.my_packages.models.User;
+import com.test.models.User;
 
 @Service
 public interface UserService {

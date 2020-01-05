@@ -3,9 +3,9 @@ package com.test.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.test.models.SampleRequisitionItems;
+import com.test.models.SampleRequisitionItem;
 
 @Repository
-public interface SampleRequisitionItemsRepository extends JpaRepository<SampleRequisitionItems, Integer> {
+public interface SampleRequisitionItemsRepository extends JpaRepository<SampleRequisitionItem, Integer> {
 
 }

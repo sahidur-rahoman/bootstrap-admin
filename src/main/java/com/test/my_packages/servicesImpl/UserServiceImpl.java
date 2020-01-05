@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.test.my_packages.models.User;
-import com.test.my_packages.repositories.UsersReposotory;
+import com.test.models.User;
+import com.test.my_packages.repositories.UserReposotory;
 import com.test.my_packages.services.UserService;
 
 @Component
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	UsersReposotory usersReposotory;
+	UserReposotory usersReposotory;
 
 	public boolean createUser(User user) {
 		usersReposotory.save(user);

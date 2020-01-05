@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"com.test.repositories", "com.test.my_packages.repositories"})
+@EnableJpaRepositories(basePackages = {"com.test.*"})
 @PropertySource("classpath:application.properties")
 public class PersistanceJPAConfig {
 

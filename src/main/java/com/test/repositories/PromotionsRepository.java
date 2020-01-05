@@ -3,9 +3,9 @@ package com.test.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.test.models.Promotions;
+import com.test.models.Promotion;
 
 @Repository
-public interface PromotionsRepository extends JpaRepository<Promotions, Integer> {
+public interface PromotionsRepository extends JpaRepository<Promotion, Integer> {
 
 }

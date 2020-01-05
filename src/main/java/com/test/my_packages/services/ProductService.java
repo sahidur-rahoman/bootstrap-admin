@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.test.my_packages.models.Product;
+import com.test.models.Product;
 
 @Service
 public interface ProductService {

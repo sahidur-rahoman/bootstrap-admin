@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.test.my_packages.models.User;
+import com.test.models.User;
 import com.test.my_packages.services.UserService;
 
 @Controller
