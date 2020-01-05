@@ -19,7 +19,7 @@ public class Categories {
 	private String name;
 
 	@Column
-	private String Description;
+	private String description;
 
 	@Column
 	private Integer created_by;
@@ -64,11 +64,11 @@ public class Categories {
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public Integer getCreated_by() {
@@ -122,7 +122,7 @@ public class Categories {
 	@Override
 	public String toString() {
 		return "Categories [id=" + id + ", product_type_id=" + product_type_id + ", name=" + name + ", Description="
-				+ Description + ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by="
+				+ description + ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by="
 				+ modified_by + ", modified_date=" + modified_date + ", _key=" + _key + ", is_deleted=" + is_deleted
 				+ "]";
 	}

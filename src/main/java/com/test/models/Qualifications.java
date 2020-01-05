@@ -34,6 +34,9 @@ public class Qualifications {
 	private String result;
 
 	@Column
+	private Double gpa;
+
+	@Column
 	private Integer created_by;
 
 	@Column
@@ -112,6 +115,14 @@ public class Qualifications {
 		this.result = result;
 	}
 
+	public Double getGpa() {
+		return gpa;
+	}
+
+	public void setGpa(Double gpa) {
+		this.gpa = gpa;
+	}
+
 	public Integer getCreated_by() {
 		return created_by;
 	}
@@ -156,8 +167,8 @@ public class Qualifications {
 	public String toString() {
 		return "Qualifications [id=" + id + ", employee_id=" + employee_id + ", degree=" + degree + ", board=" + board
 				+ ", department=" + department + ", major=" + major + ", passing_year=" + passing_year + ", result="
-				+ result + ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by="
-				+ modified_by + ", modified_date=" + modified_date + ", _key=" + _key + "]";
+				+ result + ", gpa=" + gpa + ", created_by=" + created_by + ", created_date=" + created_date
+				+ ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key + "]";
 	}
 
 }

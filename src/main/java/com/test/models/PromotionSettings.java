@@ -13,13 +13,13 @@ public class PromotionSettings {
 	private int id;
 
 	@Column
-	private Integer previous_designation;
+	private Integer previous_designation_id;
 
 	@Column
-	private Integer current_designation;
+	private Integer current_designation_id;
 
 	@Column
-	private Integer promotion_duration;
+	private Double promotion_duration;
 
 	@Column
 	private Integer created_by;
@@ -45,26 +45,26 @@ public class PromotionSettings {
 	}
 
 	public Integer getPrevious_designation() {
-		return previous_designation;
+		return previous_designation_id;
 	}
 
 	public void setPrevious_designation(Integer previous_designation) {
-		this.previous_designation = previous_designation;
+		this.previous_designation_id = previous_designation;
 	}
 
 	public Integer getCurrent_designation() {
-		return current_designation;
+		return current_designation_id;
 	}
 
 	public void setCurrent_designation(Integer current_designation) {
-		this.current_designation = current_designation;
+		this.current_designation_id = current_designation;
 	}
 
-	public Integer getPromotion_duration() {
+	public Double getPromotion_duration() {
 		return promotion_duration;
 	}
 
-	public void setPromotion_duration(Integer promotion_duration) {
+	public void setPromotion_duration(Double promotion_duration) {
 		this.promotion_duration = promotion_duration;
 	}
 
@@ -110,8 +110,8 @@ public class PromotionSettings {
 
 	@Override
 	public String toString() {
-		return "PromotionSettings [id=" + id + ", previous_designation=" + previous_designation
-				+ ", current_designation=" + current_designation + ", promotion_duration=" + promotion_duration
+		return "PromotionSettings [id=" + id + ", previous_designation=" + previous_designation_id
+				+ ", current_designation=" + current_designation_id + ", promotion_duration=" + promotion_duration
 				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
 				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
 	}

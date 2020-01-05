@@ -16,10 +16,10 @@ public class Promotions {
 	private Integer employee_id;
 
 	@Column
-	private Integer previous_departments;
+	private Integer previous_department_id;
 
 	@Column
-	private Integer current_departments;
+	private Integer current_department_id;
 
 	@Column
 	private String promotion_purpose;
@@ -62,19 +62,19 @@ public class Promotions {
 	}
 
 	public Integer getPrevious_departments() {
-		return previous_departments;
+		return previous_department_id;
 	}
 
 	public void setPrevious_departments(Integer previous_departments) {
-		this.previous_departments = previous_departments;
+		this.previous_department_id = previous_departments;
 	}
 
 	public Integer getCurrent_departments() {
-		return current_departments;
+		return current_department_id;
 	}
 
 	public void setCurrent_departments(Integer current_departments) {
-		this.current_departments = current_departments;
+		this.current_department_id = current_departments;
 	}
 
 	public String getPromotion_purpose() {
@@ -144,7 +144,7 @@ public class Promotions {
 	@Override
 	public String toString() {
 		return "Promotions [id=" + id + ", employee_id=" + employee_id + ", previous_departments="
-				+ previous_departments + ", current_departments=" + current_departments + ", promotion_purpose="
+				+ previous_department_id + ", current_departments=" + current_department_id + ", promotion_purpose="
 				+ promotion_purpose + ", date=" + date + ", comments=" + comments + ", created_by=" + created_by
 				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
 				+ ", _key=" + _key + "]";

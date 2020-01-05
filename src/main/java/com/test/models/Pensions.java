@@ -22,7 +22,7 @@ public class Pensions {
 	private Integer pension_percent;
 
 	@Column
-	private Float amount;
+	private Double amount;
 
 	@Column
 	private Integer created_by;
@@ -71,11 +71,11 @@ public class Pensions {
 		this.pension_percent = pension_percent;
 	}
 
-	public Float getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Float amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 

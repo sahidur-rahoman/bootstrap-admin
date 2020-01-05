@@ -16,7 +16,7 @@ public class SalaryIncrementSettings {
 	private Integer department_id;
 
 	@Column
-	private Float increment_amount;
+	private Double increment_amount;
 
 	@Column
 	private Date increment_date;
@@ -52,11 +52,11 @@ public class SalaryIncrementSettings {
 		this.department_id = department_id;
 	}
 
-	public Float getIncrement_amount() {
+	public Double getIncrement_amount() {
 		return increment_amount;
 	}
 
-	public void setIncrement_amount(Float increment_amount) {
+	public void setIncrement_amount(Double increment_amount) {
 		this.increment_amount = increment_amount;
 	}
 

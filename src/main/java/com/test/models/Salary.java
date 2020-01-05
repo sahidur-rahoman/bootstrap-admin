@@ -19,25 +19,25 @@ public class Salary {
 	private String grade;
 
 	@Column
-	private Float basic_salary;
+	private Double basic_salary;
 
 	@Column
-	private Float house_rent;
+	private Double house_rent;
 
 	@Column
-	private Float ta;
+	private Double ta;
 
 	@Column
-	private Float da;
+	private Double da;
 
 	@Column
-	private Float medical_allownce;
+	private Double medical_allownce;
 
 	@Column
-	private Float provident_fund;
+	private Double provident_fund;
 
 	@Column
-	private Float others;
+	private Double others;
 
 	@Column
 	private Integer created_by;
@@ -78,59 +78,59 @@ public class Salary {
 		this.grade = grade;
 	}
 
-	public Float getBasic_salary() {
+	public Double getBasic_salary() {
 		return basic_salary;
 	}
 
-	public void setBasic_salary(Float basic_salary) {
+	public void setBasic_salary(Double basic_salary) {
 		this.basic_salary = basic_salary;
 	}
 
-	public Float getHouse_rent() {
+	public Double getHouse_rent() {
 		return house_rent;
 	}
 
-	public void setHouse_rent(Float house_rent) {
+	public void setHouse_rent(Double house_rent) {
 		this.house_rent = house_rent;
 	}
 
-	public Float getTa() {
+	public Double getTa() {
 		return ta;
 	}
 
-	public void setTa(Float ta) {
+	public void setTa(Double ta) {
 		this.ta = ta;
 	}
 
-	public Float getDa() {
+	public Double getDa() {
 		return da;
 	}
 
-	public void setDa(Float da) {
+	public void setDa(Double da) {
 		this.da = da;
 	}
 
-	public Float getMedical_allownce() {
+	public Double getMedical_allownce() {
 		return medical_allownce;
 	}
 
-	public void setMedical_allownce(Float medical_allownce) {
+	public void setMedical_allownce(Double medical_allownce) {
 		this.medical_allownce = medical_allownce;
 	}
 
-	public Float getProvident_fund() {
+	public Double getProvident_fund() {
 		return provident_fund;
 	}
 
-	public void setProvident_fund(Float provident_fund) {
+	public void setProvident_fund(Double provident_fund) {
 		this.provident_fund = provident_fund;
 	}
 
-	public Float getOthers() {
+	public Double getOthers() {
 		return others;
 	}
 
-	public void setOthers(Float others) {
+	public void setOthers(Double others) {
 		this.others = others;
 	}
 

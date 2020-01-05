@@ -19,7 +19,7 @@ public class BonusSettings {
 	private Integer salary_id;
 
 	@Column
-	private Integer duration;
+	private Double duration;
 
 	@Column
 	private Double bonus_amount;
@@ -63,11 +63,11 @@ public class BonusSettings {
 		this.salary_id = salary_id;
 	}
 
-	public Integer getDuration() {
+	public Double getDuration() {
 		return duration;
 	}
 
-	public void setDuration(Integer duration) {
+	public void setDuration(Double duration) {
 		this.duration = duration;
 	}
 

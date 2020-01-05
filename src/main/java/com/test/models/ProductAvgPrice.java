@@ -31,7 +31,7 @@ public class ProductAvgPrice {
 	private Integer unit_id;
 
 	@Column
-	private Integer avg_price;
+	private Double avg_price;
 
 	@Column
 	private Integer created_by;
@@ -107,11 +107,11 @@ public class ProductAvgPrice {
 		this.unit_id = unit_id;
 	}
 
-	public Integer getAvg_price() {
+	public Double getAvg_price() {
 		return avg_price;
 	}
 
-	public void setAvg_price(Integer avg_price) {
+	public void setAvg_price(Double avg_price) {
 		this.avg_price = avg_price;
 	}
 

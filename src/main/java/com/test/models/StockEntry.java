@@ -43,7 +43,7 @@ public class StockEntry {
 	private Double quantity;
 
 	@Column
-	private Integer unit_price;
+	private Double unit_price;
 
 	@Column
 	private Double total_price;
@@ -154,11 +154,11 @@ public class StockEntry {
 		this.quantity = quantity;
 	}
 
-	public Integer getUnit_price() {
+	public Double getUnit_price() {
 		return unit_price;
 	}
 
-	public void setUnit_price(Integer unit_price) {
+	public void setUnit_price(Double unit_price) {
 		this.unit_price = unit_price;
 	}
 
