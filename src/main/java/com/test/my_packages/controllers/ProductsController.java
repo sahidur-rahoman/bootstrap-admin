@@ -1,8 +1,8 @@
 package com.test.my_packages.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,18 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.models.Product;
-import com.test.my_packages.services.ProductService;
 
 @Controller
 @RequestMapping("/products")
 public class ProductsController {
 
-	@Autowired
-	ProductService productService;
-
+	/*
+	 * @Autowired ProductService productService;
+	 */
 	@GetMapping
 	public String productList(Model model) {
-		List<Product> products = productService.findAllProducts();
+		List<Product> products =  new ArrayList<Product>();/* productService.findAllProducts(); */
 
 		model.addAttribute("products", products);
 
@@ -31,13 +30,13 @@ public class ProductsController {
 
 	@PostMapping("/new")
 	public Product newProduct(Product product) {
-		product = productService.createProduct(product);
+		product = null;/*productService.createProduct(product);*/
 		return product;
 	}
 
 	@PostMapping("/update")
 	public Product updateProduct(Product product) {
-		product = productService.updateProduct(product);
+		product = null; /* productService.updateProduct(product); */
 		return product;
 	}
 
@@ -45,7 +44,7 @@ public class ProductsController {
 	public boolean deleteProduct(int productId) {
 		boolean flag;
 		try {
-			flag = productService.deleteProduct(productId);
+			flag = true; /* productService.deleteProduct(productId); */
 		} catch (Exception e) {
 			flag = false;
 		}

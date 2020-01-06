@@ -1,4 +1,7 @@
 [31-Dec-2019]
+* [SH] Deleted old works, Added custom query on repositories
+
+[31-Dec-2019]
 * [SH] Added services and service implements
 
 [31-Dec-2019]

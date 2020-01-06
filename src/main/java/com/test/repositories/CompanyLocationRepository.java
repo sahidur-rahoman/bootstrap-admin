@@ -10,6 +10,6 @@ import com.test.models.CompanyLocation;
 @Repository
 public interface CompanyLocationRepository extends JpaRepository<CompanyLocation, Integer> {
 	
-	@Query("SELECT clr.name from colors clr WHERE clr.id = :id")
-	public Integer getCompanyLocationIdByCompanyId(@Param("id") Integer id);
+	@Query("SELECT cmpl.id from company_location cmpl WHERE cmpl.company_id = :cmp_id")
+	public Integer getCompanyLocationId(@Param("cmp_id") Integer company_id);
 }

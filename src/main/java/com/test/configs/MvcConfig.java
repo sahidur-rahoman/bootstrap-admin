@@ -11,17 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.test.my_packages.services.ProductService;
-import com.test.my_packages.servicesImpl.ProductServiceImpl;
-
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.test.*")
 public class MvcConfig implements WebMvcConfigurer {
-	
-	@Bean public ProductService productService() {;
-		return new ProductServiceImpl();
-	}
 
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("login");

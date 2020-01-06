@@ -13,8 +13,8 @@ import com.test.models.Branch;
 public interface BranchRepository extends JpaRepository<Branch, Integer> {
 	
 	@Query("SELECT br.name FROM branch br WHERE br.id= :id")
-	public String getBranchNameById(@Param("id") Integer id);
+	public String getBranchName(@Param("id") Integer id);
 
 	@Query("SELECT br.name FROM branch br WHERE br.company_id= :com_id")
-	public List<String> getBranchesNameByCompanyId(@Param("com_id") Integer com_id);
+	public List<String> getBranchNames(@Param("com_id") Integer company_id);
 }
