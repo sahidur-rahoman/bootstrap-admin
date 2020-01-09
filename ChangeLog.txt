@@ -1,3 +1,6 @@
+[08-Jan-2020]
+* [SH] Created new 18 entity classes
+
 [06-Jan-2020]
 * [SH] Deleted old works, Added custom query on repositories
 
