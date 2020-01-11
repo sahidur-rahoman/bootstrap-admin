@@ -13,7 +13,7 @@ public class Subhead {
 	private int id;
 
 	@Column
-	private Integer sub_head_id;
+	private Integer head_id;
 
 	@Column
 	private String name;
@@ -50,12 +50,12 @@ public class Subhead {
 		this.id = id;
 	}
 
-	public Integer getSub_head_id() {
-		return sub_head_id;
+	public Integer getHead_id() {
+		return head_id;
 	}
 
-	public void setSub_head_id(Integer sub_head_id) {
-		this.sub_head_id = sub_head_id;
+	public void setHead_id(Integer head_id) {
+		this.head_id = head_id;
 	}
 
 	public String getName() {
@@ -132,10 +132,10 @@ public class Subhead {
 
 	@Override
 	public String toString() {
-		return "Subhead [id=" + id + ", sub_head_id=" + sub_head_id + ", name=" + name + ", code=" + code
-				+ ", description=" + description + ", created_by=" + created_by + ", created_date=" + created_date
-				+ ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key
-				+ ", is_deleted=" + is_deleted + "]";
+		return "Subhead [id=" + id + ", head_id=" + head_id + ", name=" + name + ", code=" + code + ", description="
+				+ description + ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by="
+				+ modified_by + ", modified_date=" + modified_date + ", _key=" + _key + ", is_deleted=" + is_deleted
+				+ "]";
 	}
 
 }

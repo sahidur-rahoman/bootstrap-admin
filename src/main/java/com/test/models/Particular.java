@@ -16,7 +16,7 @@ public class Particular {
 	private Integer head_id;
 
 	@Column
-	private Integer sub_head_id;
+	private Integer subhead_id;
 
 	@Column
 	private String name;
@@ -61,12 +61,12 @@ public class Particular {
 		this.head_id = head_id;
 	}
 
-	public Integer getSub_head_id() {
-		return sub_head_id;
+	public Integer getSubhead_id() {
+		return subhead_id;
 	}
 
-	public void setSub_head_id(Integer sub_head_id) {
-		this.sub_head_id = sub_head_id;
+	public void setSubhead_id(Integer subhead_id) {
+		this.subhead_id = subhead_id;
 	}
 
 	public String getName() {
@@ -143,7 +143,7 @@ public class Particular {
 
 	@Override
 	public String toString() {
-		return "Particular [id=" + id + ", head_id=" + head_id + ", sub_head_id=" + sub_head_id + ", name=" + name
+		return "Particular [id=" + id + ", head_id=" + head_id + ", subhead_id=" + subhead_id + ", name=" + name
 				+ ", code=" + code + ", description=" + description + ", created_by=" + created_by + ", created_date="
 				+ created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key
 				+ ", is_deleted=" + is_deleted + "]";

@@ -13,6 +13,9 @@ public class Pension {
 	private int id;
 
 	@Column
+	private Integer employee_id;
+
+	@Column
 	private Integer last_department_id;
 
 	@Column
@@ -45,6 +48,14 @@ public class Pension {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getEmployee_id() {
+		return employee_id;
+	}
+
+	public void setEmployee_id(Integer employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public Integer getLast_department_id() {
@@ -121,10 +132,10 @@ public class Pension {
 
 	@Override
 	public String toString() {
-		return "Pensions [id=" + id + ", last_department_id=" + last_department_id + ", salary_id=" + salary_id
-				+ ", pension_percent=" + pension_percent + ", amount=" + amount + ", created_by=" + created_by
-				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + "]";
+		return "Pension [id=" + id + ", employee_id=" + employee_id + ", last_department_id=" + last_department_id
+				+ ", salary_id=" + salary_id + ", pension_percent=" + pension_percent + ", amount=" + amount
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
 	}
 
 }

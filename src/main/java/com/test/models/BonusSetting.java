@@ -13,6 +13,9 @@ public class BonusSetting {
 	private int id;
 
 	@Column
+	private Integer employee_id;
+
+	@Column
 	private Integer department_id;
 
 	@Column
@@ -45,6 +48,14 @@ public class BonusSetting {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getEmployee_id() {
+		return employee_id;
+	}
+
+	public void setEmployee_id(Integer employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public Integer getDepartment_id() {
@@ -121,10 +132,10 @@ public class BonusSetting {
 
 	@Override
 	public String toString() {
-		return "BonusSettings [id=" + id + ", department_id=" + department_id + ", salary_id=" + salary_id
-				+ ", duration=" + duration + ", bonus_amount=" + bonus_amount + ", created_by=" + created_by
-				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + "]";
+		return "BonusSetting [id=" + id + ", employee_id=" + employee_id + ", department_id=" + department_id
+				+ ", salary_id=" + salary_id + ", duration=" + duration + ", bonus_amount=" + bonus_amount
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
 	}
 
 }

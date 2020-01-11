@@ -11,6 +11,9 @@ public class User {
 	private int id;
 
 	@Column
+	private Integer company_id;
+
+	@Column
 	private Integer employee_id;
 
 	@Column
@@ -34,6 +37,14 @@ public class User {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getCompany_id() {
+		return company_id;
+	}
+
+	public void setCompany_id(Integer company_id) {
+		this.company_id = company_id;
 	}
 
 	public Integer getEmployee_id() {
@@ -86,8 +97,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "Users [id=" + id + ", employee_id=" + employee_id + ", institute_id=" + institute_id + ", name=" + name
-				+ ", email=" + email + ", password=" + password + ", status=" + status + "]";
+		return "User [id=" + id + ", company_id=" + company_id + ", employee_id=" + employee_id + ", institute_id="
+				+ institute_id + ", name=" + name + ", email=" + email + ", password=" + password + ", status=" + status
+				+ "]";
 	}
 
 }

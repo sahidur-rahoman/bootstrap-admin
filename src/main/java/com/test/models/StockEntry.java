@@ -13,6 +13,12 @@ public class StockEntry {
 	private int id;
 
 	@Column
+	private Integer institue_id;
+
+	@Column
+	private Integer company_id;
+
+	@Column
 	private Integer purchase_requisition_id;
 
 	@Column
@@ -34,7 +40,7 @@ public class StockEntry {
 	private Integer color_id;
 
 	@Column
-	private Integer style;
+	private String style;
 
 	@Column
 	private Integer unit_id;
@@ -72,6 +78,22 @@ public class StockEntry {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getInstitue_id() {
+		return institue_id;
+	}
+
+	public void setInstitue_id(Integer institue_id) {
+		this.institue_id = institue_id;
+	}
+
+	public Integer getCompany_id() {
+		return company_id;
+	}
+
+	public void setCompany_id(Integer company_id) {
+		this.company_id = company_id;
 	}
 
 	public Integer getPurchase_requisition_id() {
@@ -130,11 +152,11 @@ public class StockEntry {
 		this.color_id = color_id;
 	}
 
-	public Integer getStyle() {
+	public String getStyle() {
 		return style;
 	}
 
-	public void setStyle(Integer style) {
+	public void setStyle(String style) {
 		this.style = style;
 	}
 
@@ -220,10 +242,11 @@ public class StockEntry {
 
 	@Override
 	public String toString() {
-		return "StockEntry [id=" + id + ", purchase_requisition_id=" + purchase_requisition_id + ", purchased_by="
-				+ purchased_by + ", received_by=" + received_by + ", category_id=" + category_id + ", product_id="
-				+ product_id + ", size_id=" + size_id + ", color_id=" + color_id + ", style=" + style + ", unit_id="
-				+ unit_id + ", quantity=" + quantity + ", unit_price=" + unit_price + ", total_price=" + total_price
+		return "StockEntry [id=" + id + ", institue_id=" + institue_id + ", company_id=" + company_id
+				+ ", purchase_requisition_id=" + purchase_requisition_id + ", purchased_by=" + purchased_by
+				+ ", received_by=" + received_by + ", category_id=" + category_id + ", product_id=" + product_id
+				+ ", size_id=" + size_id + ", color_id=" + color_id + ", style=" + style + ", unit_id=" + unit_id
+				+ ", quantity=" + quantity + ", unit_price=" + unit_price + ", total_price=" + total_price
 				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
 				+ ", modified_date=" + modified_date + ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}

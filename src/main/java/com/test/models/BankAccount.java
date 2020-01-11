@@ -37,6 +37,9 @@ public class BankAccount {
 	private String ac_status;
 
 	@Column
+	private Double balance;
+
+	@Column
 	private Integer created_by;
 
 	@Column
@@ -126,6 +129,14 @@ public class BankAccount {
 		this.ac_status = ac_status;
 	}
 
+	public Double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+
 	public Integer getCreated_by() {
 		return created_by;
 	}
@@ -178,9 +189,9 @@ public class BankAccount {
 	public String toString() {
 		return "BankAccount [id=" + id + ", bank_id=" + bank_id + ", bank_branch_id=" + bank_branch_id + ", ac_name="
 				+ ac_name + ", ac_type=" + ac_type + ", ac_number=" + ac_number + ", code=" + code + ", description="
-				+ description + ", ac_status=" + ac_status + ", created_by=" + created_by + ", created_date="
-				+ created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key
-				+ ", is_deleted=" + is_deleted + "]";
+				+ description + ", ac_status=" + ac_status + ", balance=" + balance + ", created_by=" + created_by
+				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
+				+ ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
 	}
 
 }

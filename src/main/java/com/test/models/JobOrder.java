@@ -342,7 +342,7 @@ public class JobOrder {
 	}
 
 	public enum StockStatus {
-		PENDING, COMPLETED;
+		PENDING, COMPLETE;
 	}
 
 	public enum DeliveryStatus {

@@ -1,5 +1,7 @@
 package com.test.models;
 
+import java.util.Arrays;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,7 +16,7 @@ public class UserPermission {
 	private Integer user_id;
 
 	@Column
-	private String user_types;
+	private String user_type;
 
 	@Column
 	private String[] permissions;
@@ -35,12 +37,12 @@ public class UserPermission {
 		this.user_id = user_id;
 	}
 
-	public String getUser_types() {
-		return user_types;
+	public String getUser_type() {
+		return user_type;
 	}
 
-	public void setUser_types(String user_types) {
-		this.user_types = user_types;
+	public void setUser_type(String user_type) {
+		this.user_type = user_type;
 	}
 
 	public String[] getPermissions() {
@@ -53,8 +55,8 @@ public class UserPermission {
 
 	@Override
 	public String toString() {
-		return "UserPermissions [id=" + id + ", user_id=" + user_id + ", user_types=" + user_types + ", permissions="
-				+ permissions + "]";
+		return "UserPermission [id=" + id + ", user_id=" + user_id + ", user_type=" + user_type + ", permissions="
+				+ Arrays.toString(permissions) + "]";
 	}
 
 }

@@ -15,10 +15,19 @@ public class Stock {
 	private int id;
 
 	@Column
+	private Integer institute_id;
+
+	@Column
+	private Integer company_id;
+
+	@Column
 	private Integer stock_transfer_id;
 
 	@Column
 	private Integer stock_entry_id;
+
+	@Column
+	private Integer stock_delivery_id;
 
 	@Column
 	private Integer sample_order_id;
@@ -38,9 +47,6 @@ public class Stock {
 	private Type type;
 
 	@Column
-	private Integer stock_delivery_id;
-
-	@Column
 	private Integer category_id;
 
 	@Column
@@ -53,7 +59,7 @@ public class Stock {
 	private Integer color_id;
 
 	@Column
-	private Integer style;
+	private String style;
 
 	@Column
 	private Integer unit_id;
@@ -68,16 +74,16 @@ public class Stock {
 	private Double total_price;
 
 	@Column
-	private boolean main_godown;
+	private boolean main_store;
 
 	@Column
-	private Integer from_godown_id;
+	private Integer from_store_id;
 
 	@Column
 	private Integer from_location_id;
 
 	@Column
-	private Integer to_godown_id;
+	private Integer to_store_id;
 
 	@Column
 	private Integer to_location_id;
@@ -108,6 +114,22 @@ public class Stock {
 		this.id = id;
 	}
 
+	public Integer getInstitute_id() {
+		return institute_id;
+	}
+
+	public void setInstitute_id(Integer institute_id) {
+		this.institute_id = institute_id;
+	}
+
+	public Integer getCompany_id() {
+		return company_id;
+	}
+
+	public void setCompany_id(Integer company_id) {
+		this.company_id = company_id;
+	}
+
 	public Integer getStock_transfer_id() {
 		return stock_transfer_id;
 	}
@@ -122,6 +144,14 @@ public class Stock {
 
 	public void setStock_entry_id(Integer stock_entry_id) {
 		this.stock_entry_id = stock_entry_id;
+	}
+
+	public Integer getStock_delivery_id() {
+		return stock_delivery_id;
+	}
+
+	public void setStock_delivery_id(Integer stock_delivery_id) {
+		this.stock_delivery_id = stock_delivery_id;
 	}
 
 	public Integer getSample_order_id() {
@@ -164,14 +194,6 @@ public class Stock {
 		this.type = type;
 	}
 
-	public Integer getStock_delivery_id() {
-		return stock_delivery_id;
-	}
-
-	public void setStock_delivery_id(Integer stock_delivery_id) {
-		this.stock_delivery_id = stock_delivery_id;
-	}
-
 	public Integer getCategory_id() {
 		return category_id;
 	}
@@ -204,11 +226,11 @@ public class Stock {
 		this.color_id = color_id;
 	}
 
-	public Integer getStyle() {
+	public String getStyle() {
 		return style;
 	}
 
-	public void setStyle(Integer style) {
+	public void setStyle(String style) {
 		this.style = style;
 	}
 
@@ -244,20 +266,20 @@ public class Stock {
 		this.total_price = total_price;
 	}
 
-	public boolean isMain_godown() {
-		return main_godown;
+	public boolean isMain_store() {
+		return main_store;
 	}
 
-	public void setMain_godown(boolean main_godown) {
-		this.main_godown = main_godown;
+	public void setMain_store(boolean main_store) {
+		this.main_store = main_store;
 	}
 
-	public Integer getFrom_godown_id() {
-		return from_godown_id;
+	public Integer getFrom_store_id() {
+		return from_store_id;
 	}
 
-	public void setFrom_godown_id(Integer from_godown_id) {
-		this.from_godown_id = from_godown_id;
+	public void setFrom_store_id(Integer from_store_id) {
+		this.from_store_id = from_store_id;
 	}
 
 	public Integer getFrom_location_id() {
@@ -268,12 +290,12 @@ public class Stock {
 		this.from_location_id = from_location_id;
 	}
 
-	public Integer getTo_godown_id() {
-		return to_godown_id;
+	public Integer getTo_store_id() {
+		return to_store_id;
 	}
 
-	public void setTo_godown_id(Integer to_godown_id) {
-		this.to_godown_id = to_godown_id;
+	public void setTo_store_id(Integer to_store_id) {
+		this.to_store_id = to_store_id;
 	}
 
 	public Integer getTo_location_id() {
@@ -334,14 +356,15 @@ public class Stock {
 
 	@Override
 	public String toString() {
-		return "Stocks [id=" + id + ", stock_transfer_id=" + stock_transfer_id + ", stock_entry_id=" + stock_entry_id
-				+ ", sample_order_id=" + sample_order_id + ", job_order_id=" + job_order_id + ", shipment_id="
-				+ shipment_id + ", stock_type=" + stock_type + ", type=" + type + ", stock_delivery_id="
-				+ stock_delivery_id + ", category_id=" + category_id + ", product_id=" + product_id + ", size_id="
+		return "Stock [id=" + id + ", institute_id=" + institute_id + ", company_id=" + company_id
+				+ ", stock_transfer_id=" + stock_transfer_id + ", stock_entry_id=" + stock_entry_id
+				+ ", stock_delivery_id=" + stock_delivery_id + ", sample_order_id=" + sample_order_id
+				+ ", job_order_id=" + job_order_id + ", shipment_id=" + shipment_id + ", stock_type=" + stock_type
+				+ ", type=" + type + ", category_id=" + category_id + ", product_id=" + product_id + ", size_id="
 				+ size_id + ", color_id=" + color_id + ", style=" + style + ", unit_id=" + unit_id + ", quantity="
-				+ quantity + ", unit_price=" + unit_price + ", total_price=" + total_price + ", main_godown="
-				+ main_godown + ", from_godown_id=" + from_godown_id + ", from_location_id=" + from_location_id
-				+ ", to_godown_id=" + to_godown_id + ", to_location_id=" + to_location_id + ", created_by=" + created_by
+				+ quantity + ", unit_price=" + unit_price + ", total_price=" + total_price + ", main_store="
+				+ main_store + ", from_store_id=" + from_store_id + ", from_location_id=" + from_location_id
+				+ ", to_store_id=" + to_store_id + ", to_location_id=" + to_location_id + ", created_by=" + created_by
 				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
 				+ ", is_deleted=" + is_deleted + ", _key=" + _key + "]";
 	}

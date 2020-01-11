@@ -1,3 +1,6 @@
+[11-Jan-2020]
+* [SH] Review and updated entity classes
+
 [08-Jan-2020]
 * [SH] Created new 18 entity classes
 

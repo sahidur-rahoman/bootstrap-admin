@@ -25,7 +25,7 @@ public class ProductAvgPrice {
 	private Integer color_id;
 
 	@Column
-	private Integer style;
+	private String style;
 
 	@Column
 	private Integer unit_id;
@@ -91,11 +91,11 @@ public class ProductAvgPrice {
 		this.color_id = color_id;
 	}
 
-	public Integer getStyle() {
+	public String getStyle() {
 		return style;
 	}
 
-	public void setStyle(Integer style) {
+	public void setStyle(String style) {
 		this.style = style;
 	}
 

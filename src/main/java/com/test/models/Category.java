@@ -19,6 +19,9 @@ public class Category {
 	private String name;
 
 	@Column
+	private String code;
+
+	@Column
 	private String description;
 
 	@Column
@@ -61,6 +64,14 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getDescription() {
@@ -121,10 +132,10 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Categories [id=" + id + ", product_type_id=" + product_type_id + ", name=" + name + ", Description="
-				+ description + ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by="
-				+ modified_by + ", modified_date=" + modified_date + ", _key=" + _key + ", is_deleted=" + is_deleted
-				+ "]";
+		return "Category [id=" + id + ", product_type_id=" + product_type_id + ", name=" + name + ", code=" + code
+				+ ", description=" + description + ", created_by=" + created_by + ", created_date=" + created_date
+				+ ", modified_by=" + modified_by + ", modified_date=" + modified_date + ", _key=" + _key
+				+ ", is_deleted=" + is_deleted + "]";
 	}
 
 }

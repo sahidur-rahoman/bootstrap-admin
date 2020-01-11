@@ -13,6 +13,9 @@ public class Salary {
 	private int id;
 
 	@Column
+	private Integer employee_id;
+
+	@Column
 	private Integer department_id;
 
 	@Column
@@ -60,6 +63,14 @@ public class Salary {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Integer getEmployee_id() {
+		return employee_id;
+	}
+
+	public void setEmployee_id(Integer employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public Integer getDepartment_id() {
@@ -176,11 +187,11 @@ public class Salary {
 
 	@Override
 	public String toString() {
-		return "Salary [id=" + id + ", department_id=" + department_id + ", grade=" + grade + ", basic_salary="
-				+ basic_salary + ", house_rent=" + house_rent + ", ta=" + ta + ", da=" + da + ", medical_allownce="
-				+ medical_allownce + ", provident_fund=" + provident_fund + ", others=" + others + ", created_by="
-				+ created_by + ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date="
-				+ modified_date + ", _key=" + _key + "]";
+		return "Salary [id=" + id + ", employee_id=" + employee_id + ", department_id=" + department_id + ", grade="
+				+ grade + ", basic_salary=" + basic_salary + ", house_rent=" + house_rent + ", ta=" + ta + ", da=" + da
+				+ ", medical_allownce=" + medical_allownce + ", provident_fund=" + provident_fund + ", others=" + others
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", _key=" + _key + "]";
 	}
 
 }
