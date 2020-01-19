@@ -1,4 +1,4 @@
-package com.test.my_packages.controllers;
+package com.test.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,8 @@ public class LoginController {
 
 	@PostMapping
 	@ResponseBody
-	public Map<String, ?> loginRequest(@RequestParam String email, @RequestParam @Value("${test.message}") String password) {
+	public Map<String, ?> loginRequest(@RequestParam String email,
+			@RequestParam @Value("${test.message}") String password) {
 		Map<String, String> response = new HashMap<String, String>();
 
 		User user = new User();/* = userService.findUserByEmail(email); */
@@ -36,6 +37,10 @@ public class LoginController {
 			response.put(STATUS_KEY, "error");
 			response.put(MESSAGE_KEY, "Invalid email or password");
 		}
+
+//		Please remove this lines after using user service
+		response.put(STATUS_KEY, "success");
+		System.out.println("\n\n\n" + response + "\n\n\n");
 
 		return response;
 	}

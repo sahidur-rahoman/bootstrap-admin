@@ -10,7 +10,7 @@ import com.test.models.Unit;
 @Repository
 public interface UnitRepository extends JpaRepository<Unit, Integer> {
 
-	@Query("SELECT units.name FROM units WHERE units.id = :id")
+	@Query("SELECT un.name FROM units un WHERE un.id = :id")
 	public String getUnitName(@Param("id") Integer id);
 
 }
