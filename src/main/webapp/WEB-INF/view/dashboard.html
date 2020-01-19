@@ -1,25 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>AdminLTE 3 | Starter</title>
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href='<spring:url value="/resources/plugins/fontawesome-free/css/all.min.css"/>'>
-  <!-- Theme style -->
-  <link rel="stylesheet" href='<spring:url value="/resources/css/adminlte.min.css"/>'>
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" th:href="@{/resources/plugins/fontawesome-free/css/all.min.css}" />
+<!-- Theme style -->
+<link rel="stylesheet" th:href="@{/resources/css/adminlte.min.css}"/>
+<!-- Google Font: Source Sans Pro -->
+<link th:href="@{https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700}" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -322,11 +315,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
-<script src='<spring:url value="/resources/plugins/jquery/jquery.min.js"/>'></script>
-<!-- Bootstrap 4 -->
-<script src='<spring:url value="/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"/>'></script>
-<!-- AdminLTE App -->
-<script src='<spring:url value="/resources/js/adminlte.min.js"/>'></script>
+	<!-- jQuery -->
+	<script th:src="@{/resources/plugins/jquery/jquery.min.js}"/></script>
+	<!-- Bootstrap 4 -->
+	<script th:src="@{/resources/plugins/bootstrap/js/bootstrap.bundle.min.js}"/></script>
+	<!-- AdminLTE App -->
+	<script th:src="@{/resources/js/adminlte.min.js}"/></script>
 </body>
 </html>

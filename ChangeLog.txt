@@ -1,3 +1,6 @@
+[19-Jan-2020]
+* [SH] Integrated Thymeleaf template engine.
+
 [11-Jan-2020]
 * [SH] Review and updated entity classes
 
