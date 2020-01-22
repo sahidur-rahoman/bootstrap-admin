@@ -13,7 +13,9 @@ public interface ProductTypeService {
 
 	public ProductType createProductType(ProductType productType);
 
-	public ProductType updateProductType(ProductType productType);
+	public ProductType updateProductType(Integer id, ProductType productType);
+
+	public void deleteProductTypes(List<Integer> productTypeIds);
 
 	public String getProductTypeName(Integer id);
 

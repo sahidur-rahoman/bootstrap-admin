@@ -23,11 +23,31 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		productType.setCreated_by(0000);
 		productType.setCreated_date(getCurrentDate());
 		productType.setIs_deleted(false);
+
 		return productTypeRepository.save(productType);
 	}
 
-	public ProductType updateProductType(ProductType productType) {
-		return productTypeRepository.save(productType);
+	public ProductType updateProductType(Integer id, ProductType productType) {
+		ProductType prdType = productTypeRepository.getOne(id);
+
+		prdType.setName(productType.getName());
+		prdType.setModified_by(0000);
+		prdType.setModified_date(getCurrentDate());
+		prdType.setIs_deleted(false);
+
+		return productTypeRepository.save(prdType);
+	}
+
+	public void deleteProductTypes(List<Integer> productTypeIds) {
+		productTypeIds.stream().forEach(id -> {
+			ProductType productType = productTypeRepository.getOne(id);
+
+			productType.setModified_by(0000);
+			productType.setModified_date(getCurrentDate());
+			productType.setIs_deleted(true);
+
+			productTypeRepository.save(productType);
+		});
 	}
 
 	public String getProductTypeName(Integer id) {
@@ -50,4 +70,5 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 	private Date getCurrentDate() {
 		return new Date();
 	}
+
 }

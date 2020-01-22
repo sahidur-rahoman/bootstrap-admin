@@ -1,12 +1,14 @@
 package com.test.controllers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,6 +25,7 @@ public class ProductTypeConroller {
 	@GetMapping
 	public String newProductType(ModelMap model) {
 		ProductType productType = new ProductType();
+		model.addAttribute("view_mode", "New");
 		model.addAttribute("product_type", productType);
 		return "product_type";
 	}
@@ -33,6 +36,27 @@ public class ProductTypeConroller {
 		productTypeService.createProductType(productType);
 		response.put("status", "success");
 		return "redirect:producttype/list";
+	}
+
+	@GetMapping("{id}")
+	public String updateProductType(@PathVariable Integer id, ModelMap model) {
+		model.addAttribute("view_mode", "Update");
+		model.addAttribute("product_type", productTypeService.findProductType(id));
+		return "product_type";
+	}
+
+	@PostMapping("{id}")
+	public String updateProductType(@PathVariable Integer id, ProductType productType, ModelMap map) {
+		Map<String, String> response = new HashMap<String, String>();
+		productTypeService.updateProductType(id, productType);
+		response.put("status", "success");
+		return "redirect:producttype/list";
+	}
+
+	@PostMapping("/delete")
+	public void batchDeleteProductType(List<Integer> productTypeIds) {
+		productTypeService.deleteProductTypes(productTypeIds);
+		// TODO: Another functionalities will be added
 	}
 
 	@GetMapping("/list")
