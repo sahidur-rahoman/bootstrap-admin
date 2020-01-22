@@ -91,7 +91,7 @@
 							</div>
 							<div class="card-body">
 								<!-- form start -->
-								<form role="form" th:object="${product_type}" th:action="@{/producttype}" method="post">
+								<form role="form" th:object="${product_type}" th:action="@{/producttype/} + ${id != null ? id : ''}" method="post">
 									<div class="row">
 										<div class="col-sm-4">
 											<div class="form-group">

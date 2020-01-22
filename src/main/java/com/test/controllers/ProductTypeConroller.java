@@ -35,12 +35,13 @@ public class ProductTypeConroller {
 		Map<String, String> response = new HashMap<String, String>();
 		productTypeService.createProductType(productType);
 		response.put("status", "success");
-		return "redirect:producttype/list";
+		return "redirect:list";
 	}
 
 	@GetMapping("{id}")
 	public String updateProductType(@PathVariable Integer id, ModelMap model) {
 		model.addAttribute("view_mode", "Update");
+		model.addAttribute("id", id);
 		model.addAttribute("product_type", productTypeService.findProductType(id));
 		return "product_type";
 	}
@@ -50,7 +51,7 @@ public class ProductTypeConroller {
 		Map<String, String> response = new HashMap<String, String>();
 		productTypeService.updateProductType(id, productType);
 		response.put("status", "success");
-		return "redirect:producttype/list";
+		return "redirect:list";
 	}
 
 	@PostMapping("/delete")

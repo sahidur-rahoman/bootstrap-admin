@@ -28,7 +28,7 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 	}
 
 	public ProductType updateProductType(Integer id, ProductType productType) {
-		ProductType prdType = productTypeRepository.getOne(id);
+		ProductType prdType = findProductType(id);
 
 		prdType.setName(productType.getName());
 		prdType.setModified_by(0000);
@@ -58,8 +58,10 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		return productTypeRepository.getAllProductTypeName();
 	}
 
-	public Optional<ProductType> findProductType(Integer id) {
-		return productTypeRepository.findById(id);
+	public ProductType findProductType(Integer id) {
+		Optional<ProductType> productType = productTypeRepository.findById(id);
+
+		return productType.isPresent() ? productType.get() : null;
 	}
 
 	public List<ProductType> findAllProductType() {

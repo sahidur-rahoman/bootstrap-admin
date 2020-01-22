@@ -2,7 +2,6 @@ package com.test.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,7 @@ public interface ProductTypeService {
 
 	public ArrayList<String> getAllProductTypeName();
 
-	public Optional<ProductType> findProductType(Integer id);
+	public ProductType findProductType(Integer id);
 
 	public List<ProductType> findAllProductType();
 
