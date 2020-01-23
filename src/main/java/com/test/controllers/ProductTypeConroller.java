@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.models.ProductType;
 import com.test.services.ProductTypeService;
@@ -55,9 +57,13 @@ public class ProductTypeConroller {
 	}
 
 	@PostMapping("/delete")
-	public void batchDeleteProductType(List<Integer> productTypeIds) {
-		productTypeService.deleteProductTypes(productTypeIds);
-		// TODO: Another functionalities will be added
+	@ResponseBody
+	public Map<String, String> batchDeleteProductType(@RequestParam(value = "itemIds[]") List<Integer> productTypeIds) {
+		Map<String, String> response = new HashMap<String, String>();
+		boolean status = productTypeService.deleteProductTypes(productTypeIds);
+		System.out.println(status);
+		response.put("status", status ? "success" : "failed");
+		return response;
 	}
 
 	@GetMapping("/list")

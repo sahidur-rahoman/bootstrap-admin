@@ -38,16 +38,22 @@ public class ProductTypeServiceImpl implements ProductTypeService {
 		return productTypeRepository.save(prdType);
 	}
 
-	public void deleteProductTypes(List<Integer> productTypeIds) {
-		productTypeIds.stream().forEach(id -> {
-			ProductType productType = productTypeRepository.getOne(id);
+	public boolean deleteProductTypes(List<Integer> productTypeIds) {
+		try {
+			productTypeIds.stream().forEach(id -> {
+				ProductType productType = findProductType(id);
 
-			productType.setModified_by(0000);
-			productType.setModified_date(getCurrentDate());
-			productType.setIs_deleted(true);
+				productType.setModified_by(0000);
+				productType.setModified_date(getCurrentDate());
+				productType.setIs_deleted(true);
 
-			productTypeRepository.save(productType);
-		});
+				productTypeRepository.save(productType);
+			});
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 	public String getProductTypeName(Integer id) {

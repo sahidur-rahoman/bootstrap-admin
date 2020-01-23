@@ -14,7 +14,7 @@ public interface ProductTypeService {
 
 	public ProductType updateProductType(Integer id, ProductType productType);
 
-	public void deleteProductTypes(List<Integer> productTypeIds);
+	public boolean deleteProductTypes(List<Integer> productTypeIds);
 
 	public String getProductTypeName(Integer id);
 
