@@ -1,3 +1,6 @@
+[23-Jan-2020]
+* [SH] Added create, update and delete functionality for Category.
+
 [22-Jan-2020]
 * [SH] Added update and delete functionality for Product Type. 
 
