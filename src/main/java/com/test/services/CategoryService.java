@@ -1,6 +1,7 @@
 package com.test.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -27,4 +28,5 @@ public interface CategoryService {
 
 	public List<Category> findAllCategoryByProductTypeId(Integer productTypeId);
 
+	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> Categories);
 }

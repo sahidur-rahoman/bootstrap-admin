@@ -1,10 +1,8 @@
 package com.test.controllers;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,17 +82,12 @@ public class CategoryConroller {
 	public String categoryList(ModelMap model) {
 		List<ProductType> productTypes = getAllProductType();
 		model.addAttribute("product_type_list", productTypes);
-		model.addAttribute("product_type_names_map", getNamesMapFromProductTypeList(productTypes));
+		model.addAttribute("product_type_names_map", productTypeService.getNameMapWithIdFromProductTypeList(productTypes));
 		model.addAttribute("category_list", categoryService.findAllCategory());
 		return "categories";
 	}
 
 	private List<ProductType> getAllProductType() {
-		return productTypeService.findAllProductType().stream().sorted(Comparator.comparing(ProductType::getName))
-				.collect(Collectors.toList());
-	}
-
-	private Map<Integer, String> getNamesMapFromProductTypeList(List<ProductType> productTypes) {
-		return productTypes.stream().collect(Collectors.toMap(ProductType::getId, ProductType::getName));
+		return productTypeService.findAllProductType();
 	}
 }

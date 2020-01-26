@@ -1,7 +1,9 @@
 package com.test.services.impl;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -13,7 +15,7 @@ import com.test.repositories.CategoryRepository;
 import com.test.services.CategoryService;
 
 @Component
-public class CategoriesServiceImpl implements CategoryService {
+public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
 	public CategoryRepository categoryRepository;
@@ -84,12 +86,19 @@ public class CategoriesServiceImpl implements CategoryService {
 
 	@Override
 	public List<Category> findAllCategory() {
-		return categoryRepository.findAll().stream().filter(category -> !category.isIs_deleted()).collect(Collectors.toList());
+		return categoryRepository.findAll().stream().filter(category -> !category.isIs_deleted())
+				.sorted(Comparator.comparing(Category::getName)).collect(Collectors.toList());
 	}
 
 	@Override
 	public List<Category> findAllCategoryByProductTypeId(Integer productTypeId) {
-		return categoryRepository.getAllCategoryByProductTypeId(productTypeId);
+		return categoryRepository.getAllCategoryByProductTypeId(productTypeId).stream()
+				.sorted(Comparator.comparing(Category::getName)).collect(Collectors.toList());
+	}
+
+	@Override
+	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> Categories) {
+		return Categories.stream().collect(Collectors.toMap(Category::getId, Category::getName));
 	}
 
 	private Date getCurrentDate() {
