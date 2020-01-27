@@ -1,3 +1,6 @@
+[27-Jan-2020]
+* [SH] Added controller and views for Factory and Vendor.
+
 [26-Jan-2020]
 * [SH] Added create, update and delete functionality for Factory, Vendor, JobOrder, JobOrderItem, JobRequisition, JobRequisitionItem, SampleOrder, SampleOrderItem except Integration of views.
 
