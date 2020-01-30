@@ -1,3 +1,6 @@
+[30-Jan-2020]
+* [SH] Added CRUD operations for Store and Location.
+
 [27-Jan-2020]
 * [SH] Added controller and views for Factory and Vendor.
 

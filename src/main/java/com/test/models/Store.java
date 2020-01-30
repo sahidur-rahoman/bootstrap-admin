@@ -31,6 +31,9 @@ public class Store {
 	private String description;
 
 	@Column
+	private Integer store_keeper_id;
+
+	@Column
 	private Integer created_by;
 
 	@Column
@@ -104,6 +107,14 @@ public class Store {
 		this.description = description;
 	}
 
+	public Integer getStore_keeper_id() {
+		return store_keeper_id;
+	}
+
+	public void setStore_keeper_id(Integer store_keeper_id) {
+		this.store_keeper_id = store_keeper_id;
+	}
+
 	public Integer getCreated_by() {
 		return created_by;
 	}
@@ -155,9 +166,9 @@ public class Store {
 	@Override
 	public String toString() {
 		return "Store [id=" + id + ", name=" + name + ", code=" + code + ", phone=" + phone + ", capacity=" + capacity
-				+ ", address=" + address + ", description=" + description + ", created_by=" + created_by
-				+ ", created_date=" + created_date + ", modified_by=" + modified_by + ", modified_date=" + modified_date
-				+ ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
+				+ ", address=" + address + ", description=" + description + ", store_keeper_id=" + store_keeper_id
+				+ ", created_by=" + created_by + ", created_date=" + created_date + ", modified_by=" + modified_by
+				+ ", modified_date=" + modified_date + ", _key=" + _key + ", is_deleted=" + is_deleted + "]";
 	}
 
 }
