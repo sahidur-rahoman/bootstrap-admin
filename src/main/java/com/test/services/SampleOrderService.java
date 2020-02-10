@@ -9,13 +9,13 @@ import com.test.models.SampleOrder;
 @Service
 public interface SampleOrderService {
 
-	public SampleOrder createSampleOrder(SampleOrder sampleOrder);
+	public SampleOrder createSampleOrder(SampleOrder sampleOrder) throws Exception;
 
 	public SampleOrder updateSampleOrder(Integer id, SampleOrder sampleOrder);
 
 	public boolean deleteSampleOrders(List<Integer> sampleOrderIds);
 
-	public String getSampleOrderNumber(Integer id);
+	public Integer getSampleOrderId(String orderNumber);
 
 	public List<String> getAllSampleOrderNumber();
 

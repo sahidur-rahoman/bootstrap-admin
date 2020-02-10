@@ -2,6 +2,6 @@ package com.test.helper;
 
 public class Helper {
 	public enum TemplateViewMode {
-		New, Update;
+		New, Create, Update, Final;
 	}
 }

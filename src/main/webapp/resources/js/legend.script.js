@@ -52,6 +52,7 @@ function deleteSelectedItems() {
 					setTimeout(function() {// wait for 0 secs(2)
 						location.reload(); // then reload the page.(3)
 					}, 0);
+					alert("Items remove successful");
 				}
 				console.log(data);
 			}

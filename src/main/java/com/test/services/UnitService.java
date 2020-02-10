@@ -1,6 +1,7 @@
 package com.test.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,7 @@ public interface UnitService {
 	public Unit findUnit(Integer id);
 
 	public List<Unit> findAllUnit();
+
+	public Map<Integer, String> getNameMapWithIdFromUnitList(List<Unit> units);
 
 }

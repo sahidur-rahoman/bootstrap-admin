@@ -8,27 +8,65 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.test.helper.SessionMaps;
 import com.test.models.SampleOrder;
+import com.test.models.SampleOrderItem;
 import com.test.repositories.SampleOrderRepository;
+import com.test.services.ItemService;
+import com.test.services.SampleOrderItemService;
 import com.test.services.SampleOrderService;
 
 @Component
 public class SampleOrderServiceImpl implements SampleOrderService {
 
 	@Autowired
+	private SessionMaps sessionMaps;
+	@Autowired
 	private SampleOrderRepository sampleOrderRepository;
+	@Autowired
+	private SampleOrderItemService sampleOrderItemService;
+	@Autowired
+	private ItemService itemService;
 
 	@Override
-	public SampleOrder createSampleOrder(SampleOrder sampleOrder) {
-		sampleOrder.setCreated_by(0000);
+	public SampleOrder createSampleOrder(SampleOrder sampleOrder) throws Exception {
+		
+		if(getSampleOrderId(sampleOrder.getOrder_no()) != null) {
+			throw new Exception("Sample order table already have this order number");
+		}
+		
+		Integer userId = 0000;
+		Integer instituteId = 0000;
+		Integer companyId = 0000;
+
+		sampleOrder.setInstitute_id(instituteId);
+		sampleOrder.setCompany_id(companyId);
+		sampleOrder.setOrder_status(SampleOrder.OrderStatus.pending);
+		sampleOrder.setStock_status(SampleOrder.StockStatus.pending);
+		sampleOrder.setDelivery_status(SampleOrder.DeliveryStatus.due);
+		sampleOrder.setProduction_status(SampleOrder.ProductionStatus.no);
+
+		sampleOrder.setCreated_by(userId);
 		sampleOrder.setCreated_date(getCurrentDate());
 		sampleOrder.setIs_deleted(false);
 
-		return sampleOrderRepository.save(sampleOrder);
+		sampleOrderRepository.save(sampleOrder);
+
+		sessionMaps.getItemsMap(userId).values().stream().collect(Collectors.toList()).forEach(item -> {
+			SampleOrderItem sampleOrderItem = itemService.convertItemToSampleOrderItem(item);
+
+			sampleOrderItem.setSample_order_id(getSampleOrderId(sampleOrder.getOrder_no()));
+			sampleOrderItem.setIs_deleted(false);
+
+			sampleOrderItemService.createSampleOrderItem(sampleOrderItem);
+		});
+
+		return sampleOrder;
 	}
 
 	@Override
 	public SampleOrder updateSampleOrder(Integer id, SampleOrder sampleOrder) {
+		Integer userId = 0000;
 		SampleOrder smOrder = findSampleOrder(id);
 
 		smOrder.setInstitute_id(sampleOrder.getInstitute_id());
@@ -47,16 +85,34 @@ public class SampleOrderServiceImpl implements SampleOrderService {
 		smOrder.setQuantity(sampleOrder.getQuantity());
 		smOrder.setTotal_amount(sampleOrder.getTotal_amount());
 		smOrder.setSample_design(sampleOrder.getSample_design());
-		smOrder.setOrder_status(sampleOrder.getOrder_status());
-		smOrder.setStock_status(sampleOrder.getStock_status());
-		smOrder.setDelivery_status(sampleOrder.getDelivery_status());
-		smOrder.setProduction_status(sampleOrder.getProduction_status());
+		/*
+		 * smOrder.setOrder_status(sampleOrder.getOrder_status());
+		 * smOrder.setStock_status(sampleOrder.getStock_status());
+		 * smOrder.setDelivery_status(sampleOrder.getDelivery_status());
+		 * smOrder.setProduction_status(sampleOrder.getProduction_status());
+		 */
 
 		smOrder.setModified_by(0000);
 		smOrder.setModified_date(getCurrentDate());
 		smOrder.setIs_deleted(false);
 
-		return sampleOrderRepository.save(smOrder);
+		sampleOrderRepository.save(smOrder);
+
+		sampleOrderItemService.findAllSampleOrderItemBySampleOrderId(smOrder.getId()).stream().forEach(smit -> {
+			smit.setIs_deleted(true);
+			sampleOrderItemService.updateSampleOrderItem(smit.getId(), smit);
+		});
+
+
+		sessionMaps.getItemsMap(userId).values().stream().collect(Collectors.toList()).forEach(item -> {
+			SampleOrderItem sampleOrderItem = itemService.convertItemToSampleOrderItem(item);
+
+			sampleOrderItem.setSample_order_id(smOrder.getId());
+			sampleOrderItem.setIs_deleted(false);
+
+			sampleOrderItemService.createSampleOrderItem(sampleOrderItem);
+		});
+		return smOrder;
 	}
 
 	@Override
@@ -79,8 +135,8 @@ public class SampleOrderServiceImpl implements SampleOrderService {
 	}
 
 	@Override
-	public String getSampleOrderNumber(Integer id) {
-		return sampleOrderRepository.getSampleOrderNumber(id);
+	public Integer getSampleOrderId(String orderNumber) {
+		return sampleOrderRepository.getSampleOrderId(orderNumber);
 	}
 
 	@Override

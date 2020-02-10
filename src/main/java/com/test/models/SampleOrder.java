@@ -8,6 +8,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity(name = "sample_orders")
 public class SampleOrder {
 
@@ -33,12 +35,15 @@ public class SampleOrder {
 	private String po_no;
 
 	@Column
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date issue_date;
 
 	@Column
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date order_date;
 
 	@Column
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date delivery_date;
 
 	@Column
@@ -327,18 +332,18 @@ public class SampleOrder {
 	}
 
 	public enum OrderStatus {
-		PENDING, APPROVED;
+		pending, approved;
 	}
 
 	public enum StockStatus {
-		PENDING, COMPLETED;
+		pending, completed;
 	}
 
 	public enum DeliveryStatus {
-		DUE, DELIVERED;
+		due, delivered;
 	}
 
 	public enum ProductionStatus {
-		YES, NO;
+		yes, no;
 	}
 }

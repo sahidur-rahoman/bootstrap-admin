@@ -1,6 +1,7 @@
 package com.test.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,7 @@ public interface SizeService {
 	public Size findSize(Integer id);
 
 	public List<Size> findAllSize();
+
+	public Map<Integer, String> getNameMapWithIdFromSizeList(List<Size> sizes);
 
 }

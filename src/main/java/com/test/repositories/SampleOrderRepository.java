@@ -12,8 +12,8 @@ import com.test.models.SampleOrder;
 @Repository
 public interface SampleOrderRepository extends JpaRepository<SampleOrder, Integer> {
 
-	@Query("SELECT smor.order_no FROM sample_orders smor WHERE smor.id = :id AND smor.is_deleted = 0")
-	public String getSampleOrderNumber(@Param("id") Integer id);
+	@Query("SELECT smor.id FROM sample_orders smor WHERE smor.order_no = :ord_num AND smor.is_deleted = 0")
+	public Integer getSampleOrderId(@Param("ord_num") String orderNumber);
 
 	@Query("SELECT smor.order_no FROM sample_orders smor WHERE smor.is_deleted = 0")
 	public List<String> getAllSampleOrderNumber();

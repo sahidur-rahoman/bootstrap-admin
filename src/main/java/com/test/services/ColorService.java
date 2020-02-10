@@ -1,6 +1,7 @@
 package com.test.services;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,7 @@ public interface ColorService {
 	public Color findColor(Integer id);
 
 	public List<Color> findAllColor();
+
+	public Map<Integer, String> getNameMapWithIdFromColorList(List<Color> colors);
 
 }

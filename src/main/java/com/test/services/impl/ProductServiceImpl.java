@@ -2,6 +2,7 @@ package com.test.services.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -80,6 +81,16 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	public List<Product> findAllProductByProductTypeId(Integer productTypeId) {
+		return productRepository.findAllProductByProductTypeId(productTypeId).stream().collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Product> findAllProductByCategoryId(Integer categoryId) {
+		return productRepository.findAllProductByCategoryId(categoryId).stream().collect(Collectors.toList());
+	}
+
+	@Override
 	public List<Product> findAllProduct() {
 		return productRepository.findAll().stream().filter(product -> !product.isIs_deleted())
 				.collect(Collectors.toList());
@@ -87,6 +98,11 @@ public class ProductServiceImpl implements ProductService {
 
 	private Date getCurrentDate() {
 		return new Date();
+	}
+
+	@Override
+	public Map<Integer, String> getNameMapWithIdFromProductList(List<Product> products) {
+		return products.stream().collect(Collectors.toMap(Product::getId, Product::getName));
 	}
 
 }

@@ -97,8 +97,8 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> Categories) {
-		return Categories.stream().collect(Collectors.toMap(Category::getId, Category::getName));
+	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> categories) {
+		return categories.stream().collect(Collectors.toMap(Category::getId, Category::getName));
 	}
 
 	private Date getCurrentDate() {

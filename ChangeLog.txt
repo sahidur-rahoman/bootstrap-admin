@@ -1,3 +1,6 @@
+[10-Feb-2020]
+* [SH] Added CRUD operations for Sample order & sample order item.
+
 [30-Jan-2020]
 * [SH] Added CRUD operations for Store and Location.
 

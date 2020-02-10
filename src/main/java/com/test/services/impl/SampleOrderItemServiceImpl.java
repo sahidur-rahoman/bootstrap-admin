@@ -31,10 +31,12 @@ public class SampleOrderItemServiceImpl implements SampleOrderItemService {
 		smOrderItem.setProduct_id(sampleOrderItem.getProduct_id());
 		smOrderItem.setSize_id(sampleOrderItem.getSize_id());
 		smOrderItem.setColor_id(sampleOrderItem.getColor_id());
+		smOrderItem.setUnit_id(sampleOrderItem.getUnit_id());
 		smOrderItem.setStyle(sampleOrderItem.getStyle());
 		smOrderItem.setQuantity(sampleOrderItem.getQuantity());
 		smOrderItem.setUnit_price(sampleOrderItem.getUnit_price());
 		smOrderItem.setTotal_price(sampleOrderItem.getTotal_price());
+		smOrderItem.setIs_deleted(sampleOrderItem.isIs_deleted());
 
 		return sampleOrderItemRepository.save(smOrderItem);
 	}

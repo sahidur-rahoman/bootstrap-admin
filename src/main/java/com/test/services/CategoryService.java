@@ -28,5 +28,5 @@ public interface CategoryService {
 
 	public List<Category> findAllCategoryByProductTypeId(Integer productTypeId);
 
-	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> Categories);
+	public Map<Integer, String> getNameMapWithIdFromCategoryList(List<Category> categories);
 }

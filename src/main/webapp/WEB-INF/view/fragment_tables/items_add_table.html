@@ -1,0 +1,61 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<table id="tbl_items_add" class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Product type</th>
+				<th>Category</th>
+				<th>Product</th>
+				<th style="min-width: 50px">Size</th>
+				<th style="min-width: 50px">Color</th>
+				<th style="min-width: 50px">Unit</th>
+				<th>Style</th>
+				<th>Quantity</th>
+				<th>Unit price</th>
+				<th>Total price</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody th:fragment="tbody" id="tbody_item_add" th:base_uri="${base_uri}">
+			<tr th:unless="${#lists.isEmpty(product_list)}" th:each="product: ${product_list}">
+				<td id="product_type" th:value="${product.product_type_id}" th:text="${product_type_names_map.get(product.product_type_id)}">Product type</td>
+				<td id="category" th:value="${product.category_id}" th:text="${category_names_map.get(product.category_id)}">Category</td>
+				<td id="product" th:value="${product.id}" th:text="${product.name}"></td>
+				<td>
+					<select id="size" class="form-control">
+						<!-- <option value="">Select size</option> -->
+						<option th:each="size: ${size_list}" th:text="${size.name}" th:value="${size.id}"></option>
+					</select>
+				</td>
+				<td>
+					<select id="color" class="form-control">
+						<!-- <option value="">Select color</option> -->
+						<option th:each="color : ${color_list}" th:text="${color.name}" th:value="${color.id}"></option>
+					</select>
+				</td>
+				<td>
+					<select id="unit" class="form-control">
+						<!-- <option value="">Select unit</option> -->
+						<option th:each="unit : ${unit_list}" th:text="${unit.name}" th:value="${unit.id}"></option>
+					</select>
+				</td>
+				<td>
+					<input id="txt_style" type="text" required="required" class="form-control" placeholder="Enter style">
+				</td>
+				<td>
+					<input id="txt_quantity"  type="text" required="required" class="form-control" placeholder="Enter quantity">
+				</td>
+				<td>
+					<input id="txt_unit_price" type="text" required="required" class="form-control" placeholder="Enter unit price">
+				</td>
+				<td>
+					<input id="txt_total_price" type="text" class="form-control" placeholder="Total price" readonly="readonly">
+				</td>
+				<td>
+					<div class="btn-group">
+						<button type="button" th:uri="@{/item/add}" class="btn btn-sm btn-primary btn-item-add">Add</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</html>

@@ -2,6 +2,7 @@ package com.test.services.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -84,5 +85,10 @@ public class SizeServiceImpl implements SizeService {
 
 	private Date getCurrentDate() {
 		return new Date();
+	}
+
+	@Override
+	public Map<Integer, String> getNameMapWithIdFromSizeList(List<Size> sizes) {
+		return sizes.stream().collect(Collectors.toMap(Size::getId, Size::getName));
 	}
 }

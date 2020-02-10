@@ -2,6 +2,7 @@ package com.test.services.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -84,5 +85,10 @@ public class UnitServiceImpl implements UnitService {
 
 	private Date getCurrentDate() {
 		return new Date();
+	}
+
+	@Override
+	public Map<Integer, String> getNameMapWithIdFromUnitList(List<Unit> units) {
+		return units.stream().collect(Collectors.toMap(Unit::getId, Unit::getName));
 	}
 }

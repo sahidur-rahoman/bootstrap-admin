@@ -29,6 +29,9 @@ public class SampleOrderItem {
 	private String style;
 
 	@Column
+	private Integer unit_id;
+
+	@Column
 	private Double quantity;
 
 	@Column
@@ -36,6 +39,9 @@ public class SampleOrderItem {
 
 	@Column
 	private Double total_price;
+
+	@Column
+	private boolean is_deleted;
 
 	public int getId() {
 		return id;
@@ -89,8 +95,16 @@ public class SampleOrderItem {
 		return style;
 	}
 
-	public void setStyle(String style) {
-		this.style = style;
+	public void setStyle(String string) {
+		this.style = string;
+	}
+
+	public Integer getUnit_id() {
+		return unit_id;
+	}
+
+	public void setUnit_id(Integer unit_id) {
+		this.unit_id = unit_id;
 	}
 
 	public Double getQuantity() {
@@ -117,11 +131,20 @@ public class SampleOrderItem {
 		this.total_price = total_price;
 	}
 
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
+
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
+
 	@Override
 	public String toString() {
-		return "SampleOrderItems [id=" + id + ", sample_order_id=" + sample_order_id + ", category_id=" + category_id
+		return "SampleOrderItem [id=" + id + ", sample_order_id=" + sample_order_id + ", category_id=" + category_id
 				+ ", product_id=" + product_id + ", size_id=" + size_id + ", color_id=" + color_id + ", style=" + style
-				+ ", quantity=" + quantity + ", unit_price=" + unit_price + ", total_price=" + total_price + "]";
+				+ ", unit_id=" + unit_id + ", quantity=" + quantity + ", unit_price=" + unit_price + ", total_price="
+				+ total_price + ", is_deleted=" + is_deleted + "]";
 	}
 
 }

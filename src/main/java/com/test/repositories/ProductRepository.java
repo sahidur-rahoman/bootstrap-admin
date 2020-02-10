@@ -18,4 +18,10 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	@Query("SELECT pdt.name FROM products pdt WHERE pdt.is_deleted = 0")
 	public List<String> getAllProductName();
 
+	@Query("SELECT pdt FROM products pdt WHERE pdt.category_id = :catId")
+	public List<Product> findAllProductByCategoryId(@Param("catId") Integer categoryId);
+
+	@Query("SELECT pdt FROM products pdt WHERE pdt.product_type_id = :pdtTypeId")
+	public List<Product> findAllProductByProductTypeId(@Param("pdtTypeId") Integer productTypeId);
+
 }
